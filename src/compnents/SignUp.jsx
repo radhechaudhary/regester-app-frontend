@@ -52,7 +52,7 @@ function SignUp(prop) {
     setNextpage(nextPage-1)
   }
   useEffect(()=>{
-    prop.error!==""?nextPage=1:null;
+    prop.error!==""?setNextpage(1):setNextpage(nextPage);
   },[])
 
   return (
