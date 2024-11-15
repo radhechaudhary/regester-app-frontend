@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -20,6 +20,7 @@ function SignUp(prop) {
         [name]:value
       })
     }
+    
 
     function submit(e){        //submit function when form is submitted
       e.preventDefault();
@@ -50,6 +51,9 @@ function SignUp(prop) {
     setLoading(false)
     setNextpage(nextPage-1)
   }
+  useEffect(()=>{
+    prop.error!==""?nextPage=1:null;
+  },[])
 
   return (
     <div className="sign-up login main-body">
