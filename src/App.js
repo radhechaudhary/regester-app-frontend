@@ -64,6 +64,7 @@ useEffect(()=>{         // useEffect which triggers when login data is changed c
             navigate ("/user", {replace:true})  
         }
         else if(loginData.username){
+          console.log(response.data.status)
           setError("*"+response.data.status+"*")
           setLoading(false)
         }
