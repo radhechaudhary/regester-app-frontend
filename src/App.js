@@ -48,6 +48,7 @@ useEffect(()=>{         // useEffect which triggers when login data is changed c
       axios.post(`${process.env.REACT_APP_API_URL}/login`,{username:loginData.username, password:loginData.password})
       .then((response)=>{
         if(response.data.status==='valid'){
+          console.log(response.data.status)
           if(loginData.username!==currentUser){
             for(let i=101;i<1000;i++){
               localStorage.removeItem(`room-details-${i}`)
